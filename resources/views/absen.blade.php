@@ -66,7 +66,7 @@
                                     <div class="col-6 m-3">
 
                                             <button class="btn btn-primary" id="btnFilter">Search</button>
-                                            <button class="btn btn-primary" id="btnExport">Export</button>
+                                            <button class="btn btn-primary" id="exportData">Export</button>
 
                                         <!-- <div class="col-1"></div> -->
 
@@ -134,6 +134,37 @@
                     <div class="modal-footer">
                       <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
                       <button type="button" class="btn btn-primary save-action">Save</button>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <div class="modal fade" id="modalExport" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                <div class="modal-dialog">
+                  <div class="modal-content">
+                    <div class="modal-header">
+                      <h5 class="modal-title" id="exampleModalLabel">Export Data</h5>
+                      <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                    </div>
+                    <div class="modal-body">
+                      <div class="row">
+                        <div class="col-6">
+                            <div class="mb-3">
+                              <label for="exp-start-date" class="form-label">Start Date</label>
+                              <input type="date" id="exp-start-date" class="form-control">
+                            </div>
+                        </div>
+                        <div class="col-6">
+                            <div class="mb-3">
+                              <label for="exp-end-date" class="form-label">End Date</label>
+                              <input type="date" id="exp-end-date" class="form-control">
+                            </div>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="modal-footer">
+                      <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                      <button type="button" class="btn btn-primary" id="btn-export">Export</button>
                     </div>
                   </div>
                 </div>

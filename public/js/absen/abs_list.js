@@ -1,6 +1,7 @@
 jQuery(function($){
 
     let State = {
+        table: '',
         filter: {
             start_date: moment().startOf('month').format('YYYY-MM-DD'),
             end_date: moment().endOf('month').format('YYYY-MM-DD'),
@@ -34,8 +35,8 @@ jQuery(function($){
                     status: State.filter.status
                 },
                 success: function(resp) {
-                    $('#list-abs tbody').empty()
                     if (resp.meta.code == 200) {
+                        $('#list-abs tbody').empty()
                         $.each(resp.data, function(key, val) {
                             let in_date = `-`
                             let out_date = ``
@@ -61,8 +62,6 @@ jQuery(function($){
                                 </tr>`
                             )
                         })
-                    } else {
-                        alert(resp.meta.message)
                     }
                 },
                 complete: function() {
@@ -99,6 +98,8 @@ jQuery(function($){
                         $('.toast-body').html('Fail to approve data')
                         $('#liveToast').toast('show')
                     }
+
+                    $('#list-abs').dataTable().fnDestroy()
                     ABS.API.List()
                 },
                 error: function(e) {
@@ -133,7 +134,50 @@ jQuery(function($){
                         $('.toast-body').html('Fail to reject data')
                         $('#liveToast').toast('show')
                     }
+                    
+                    $('#list-abs').dataTable().fnDestroy()
                     ABS.API.List()
+                },
+                error: function(e) {
+                    console.log('error: ', e);
+                }
+            })
+        },
+        Rekap: function(data) {
+            $.ajax({
+                url: APIURL + '/admin/abs/recap',
+                method: 'GET',
+                headers: {
+                    'x-api-key': token_login
+                },
+                data: {
+                    start_date: data.start_date,
+                    end_date: data. end_date
+                },
+                success: function(resp) {
+                    if (resp.meta.code == 200) {
+                        let years = moment(data.start_date).format('YYYY')
+                        let month = moment(data.start_date).format('MM')
+                        let header = ABS.FUNCTION.getDaysArray(years, month)
+                        // return console.log(header);/\
+                        let xlsx_header = ['User', 'Total Point'].concat(header)
+
+                         // export
+                        var ws = XLSX.utils.json_to_sheet(
+                            resp.data
+                        , {
+                            header: xlsx_header
+                        });
+                        var wb = XLSX.utils.book_new();
+                        XLSX.utils.book_append_sheet(wb, ws, 'Rekap');
+                        XLSX.writeFile(wb, 'Rekap Absen '+month+ ' ' + years +'.xlsx');
+
+                    } else {
+                        $('.toast-header').addClass('bg-warning')
+                        $('#toast-title-message').html('FAILED')
+                        $('.toast-body').html('Data not found!')
+                        $('#liveToast').toast('show')
+                    }
                 },
                 error: function(e) {
                     console.log('error: ', e);
@@ -146,6 +190,7 @@ jQuery(function($){
         active: function() {
             this.approve()
             this.reject()
+            this.export()
 
             $('input[name="daterange"]').daterangepicker({
                 opens: 'right',
@@ -223,6 +268,42 @@ jQuery(function($){
                     $('#ck-label').css('color', 'red')
                 }
             })
+        },
+        export: function() {
+            $('#exportData').on('click', function() {
+                $('#modalExport').modal('show')
+            })
+
+            $('#btn-export').on('click', function() {
+                let params = {
+                    start_date: $('#exp-start-date').val(),
+                    end_date: $('#exp-end-date').val()
+                }
+                // console.log(moment(params.start_date).format('YYYY'));
+                ABS.API.Rekap(params)
+            })
+        }
+    }
+
+    ABS.FUNCTION = {
+        getDaysArray: function(year, month) {
+            let monthIndex = month - 1; // 0..11 instead of 1..12
+            let names = [ 'sun', 'mon', 'tue', 'wed', 'thu', 'fri', 'sat' ];
+            let date = new Date(year, monthIndex, 1);
+            // console.log(moment(date).format('DD'));
+            let result = [];
+            while (date.getMonth() == monthIndex) {
+                // names[date.getDay()] => get days name
+                let get_month = date.getMonth() // get month
+                    get_month = parseInt(get_month) + parseInt(1) // get years
+                let get_year = date.getFullYear().toString()
+
+                // result.push(get_month + '/' + date.getDate()  + '/' + get_year);
+                result.push(moment(date).format('DD') + '/' + get_month  + '/' + get_year);
+                date.setDate(date.getDate() + 1);
+            }
+            
+            return result;
         }
     }
 
