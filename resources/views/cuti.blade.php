@@ -2,9 +2,9 @@
 @section('body_content')
     <!-- Navbar -->
 <!-- Layout container -->
-<div class="layout-page">
+<!-- <div class="layout-page"> -->
 <!-- Menu -->
-    <aside id="layout-menu" class="layout-menu menu-vertical menu bg-menu-theme">
+    <!-- <aside id="layout-menu" class="layout-menu menu-vertical menu bg-menu-theme">
           <div class="app-brand demo">
             <a href="index.html" class="app-brand-link">
 
@@ -18,9 +18,9 @@
 
           <div class="menu-inner-shadow"></div>
 
-          <ul class="menu-inner py-1">
+          <ul class="menu-inner py-1"> -->
             <!-- Dashboard -->
-            <li class="menu-item">
+            <!-- <li class="menu-item">
               <a href="/dashboard" class="menu-link">
                 <i class="menu-icon tf-icons bx bx-home-circle"></i>
                 <div data-i18n="Analytics">Dashboard</div>
@@ -62,7 +62,7 @@
 
 
           </ul>
-        </aside>
+        </aside> -->
         <!-- / Menu -->
 
     <nav
@@ -506,5 +506,5 @@
             <div class="content-backdrop fade"></div>
           </div>
           <!-- Content wrapper -->
-</div>
+<!-- </div> -->
 @endsection

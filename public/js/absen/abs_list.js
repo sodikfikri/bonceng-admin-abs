@@ -197,7 +197,7 @@ jQuery(function($){
                     $('#ck-label').css('color', 'red')
                 }
             })
-            
+
         },
         reject: function() {
             $('#list-abs tbody').on('click', '#reject', function() {

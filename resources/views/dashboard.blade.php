@@ -3,7 +3,7 @@
 <!-- Content wrapper -->
 <!-- Navbar -->
 <!-- Layout container -->
-<div class="layout-page">
+<!-- <div class="layout-page"> -->
         <nav
             class="layout-navbar container-xxl navbar navbar-expand-xl navbar-detached align-items-center bg-navbar-theme"
             id="layout-navbar"
@@ -681,7 +681,7 @@
             <div class="content-backdrop fade"></div>
           </div>
     <!-- Content wrapper -->
-</div>
+<!-- </div> -->
     <!-- <script>
         console.log(token_login)
     </script> -->

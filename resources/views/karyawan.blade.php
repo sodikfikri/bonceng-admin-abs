@@ -2,9 +2,9 @@
 @section('body_content')
     <!-- Navbar -->
 <!-- Layout container -->
-<div class="layout-page">
+<!-- <div class="layout-page"> -->
 <!-- Menu -->
-<aside id="layout-menu" class="layout-menu menu-vertical menu bg-menu-theme">
+<!-- <aside id="layout-menu" class="layout-menu menu-vertical menu bg-menu-theme">
           <div class="app-brand demo">
             <a href="index.html" class="app-brand-link">
 
@@ -18,9 +18,9 @@
 
           <div class="menu-inner-shadow"></div>
 
-          <ul class="menu-inner py-1">
+          <ul class="menu-inner py-1"> -->
             <!-- Dashboard -->
-            <li class="menu-item">
+            <!-- <li class="menu-item">
               <a href="/dashboard" class="menu-link">
                 <i class="menu-icon tf-icons bx bx-home-circle"></i>
                 <div data-i18n="Analytics">Dashboard</div>
@@ -62,7 +62,7 @@
 
 
           </ul>
-        </aside>
+        </aside> -->
         <!-- / Menu -->
 
     <nav
@@ -176,21 +176,20 @@
             <div class="container-xxl flex-grow-1 container-p-y">
               <h4 class="fw-bold py-3 mb-4"><span class="text-muted fw-light"></span> Karyawan</h4>
 
-
-              <hr class="my-5" />
-
               <!-- Hoverable Table rows -->
               <div class="card">
                 <h5 class="card-header">Hoverable rows</h5>
                 <div class="table-responsive text-nowrap">
-                  <table class="table table-hover">
+                  <table class="table table-hover" id="list-karyawan">
                     <thead>
                       <tr>
-                        <th>Project</th>
-                        <th>Client</th>
-                        <th>Users</th>
+                        <th>Nama</th>
+                        <th>Email</th>
+
+                        <th>Alamat</th>
+                        <th>Divisi</th>
                         <th>Status</th>
-                        <th>Actions</th>
+                        <th>Action</th>
                       </tr>
                     </thead>
                     <tbody class="table-border-bottom-0">
@@ -446,5 +445,5 @@
             <div class="content-backdrop fade"></div>
           </div>
           <!-- Content wrapper -->
-</div>
+<!-- </div> -->
 @endsection
