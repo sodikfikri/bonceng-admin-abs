@@ -3,169 +3,8 @@
     <!-- Navbar -->
 <!-- Layout container -->
 <!-- <div class="layout-page"> -->
-<!-- Menu -->
-    <!-- <aside id="layout-menu" class="layout-menu menu-vertical menu bg-menu-theme">
-          <div class="app-brand demo">
-            <a href="index.html" class="app-brand-link">
-
-              <span class="app-brand-text demo menu-text fw-bolder">Bonceng Absen</span>
-            </a>
-
-            <a href="javascript:void(0);" class="layout-menu-toggle menu-link text-large ms-auto d-block d-xl-none">
-              <i class="bx bx-chevron-left bx-sm align-middle"></i>
-            </a>
-          </div>
-
-          <div class="menu-inner-shadow"></div>
-
-          <ul class="menu-inner py-1"> -->
-            <!-- Dashboard -->
-            <!-- <li class="menu-item">
-              <a href="/dashboard" class="menu-link">
-                <i class="menu-icon tf-icons bx bx-home-circle"></i>
-                <div data-i18n="Analytics">Dashboard</div>
-              </a>
-            </li>
-
-            <li class="menu-item">
-              <a href="/absen" class="menu-link">
-                <i class="menu-icon tf-icons bx bx-layout"></i>
-                <div data-i18n="Analytics">Absen</div>
-              </a>
-            </li>
-
-            <li class="menu-item active">
-              <a href="/cuti" class="menu-link">
-                <i class="menu-icon tf-icons bx bx-dock-top"></i>
-                <div data-i18n="Analytics">Cuti</div>
-              </a>
-            </li>
-
-            <li class="menu-item">
-              <a href="javascript:void(0);" class="menu-link menu-toggle">
-                <i class="menu-icon tf-icons bx bx-detail"></i>
-                <div data-i18n="Form Elements">Setting</div>
-              </a>
-              <ul class="menu-sub">
-                <li class="menu-item">
-                  <a href="/karyawan" class="menu-link">
-                    <div data-i18n="Basic Inputs">Karyawan</div>
-                  </a>
-                </li>
-                <li class="menu-item">
-                  <a href="/divisi" class="menu-link">
-                    <div data-i18n="Input groups">Divisi</div>
-                  </a>
-                </li>
-              </ul>
-            </li>
-
-
-          </ul>
-        </aside> -->
-        <!-- / Menu -->
-
-    <nav
-            class="layout-navbar container-xxl navbar navbar-expand-xl navbar-detached align-items-center bg-navbar-theme"
-            id="layout-navbar"
-          >
-            <div class="layout-menu-toggle navbar-nav align-items-xl-center me-3 me-xl-0 d-xl-none">
-              <a class="nav-item nav-link px-0 me-xl-4" href="javascript:void(0)">
-                <i class="bx bx-menu bx-sm"></i>
-              </a>
-            </div>
-
-            <div class="navbar-nav-right d-flex align-items-center" id="navbar-collapse">
-              <!-- Search -->
-              <div class="navbar-nav align-items-center">
-                <div class="nav-item d-flex align-items-center">
-                  <i class="bx bx-search fs-4 lh-0"></i>
-                  <input
-                    type="text"
-                    class="form-control border-0 shadow-none"
-                    placeholder="Search..."
-                    aria-label="Search..."
-                  />
-                </div>
-              </div>
-              <!-- /Search -->
-
-              <ul class="navbar-nav flex-row align-items-center ms-auto">
-                <!-- Place this tag where you want the button to render. -->
-                <li class="nav-item lh-1 me-3">
-                  <a
-                    class="github-button"
-                    href="https://github.com/themeselection/sneat-html-admin-template-free"
-                    data-icon="octicon-star"
-                    data-size="large"
-                    data-show-count="true"
-                    aria-label="Star themeselection/sneat-html-admin-template-free on GitHub"
-                    >Star</a
-                  >
-                </li>
-
-                <!-- User -->
-                <li class="nav-item navbar-dropdown dropdown-user dropdown">
-                  <a class="nav-link dropdown-toggle hide-arrow" href="javascript:void(0);" data-bs-toggle="dropdown">
-                    <div class="avatar avatar-online">
-                      <img src="../assets/img/avatars/1.png" alt class="w-px-40 h-auto rounded-circle" />
-                    </div>
-                  </a>
-                  <ul class="dropdown-menu dropdown-menu-end">
-                    <li>
-                      <a class="dropdown-item" href="#">
-                        <div class="d-flex">
-                          <div class="flex-shrink-0 me-3">
-                            <div class="avatar avatar-online">
-                              <img src="../assets/img/avatars/1.png" alt class="w-px-40 h-auto rounded-circle" />
-                            </div>
-                          </div>
-                          <div class="flex-grow-1">
-                            <span class="fw-semibold d-block">John Doe</span>
-                            <small class="text-muted">Admin</small>
-                          </div>
-                        </div>
-                      </a>
-                    </li>
-                    <li>
-                      <div class="dropdown-divider"></div>
-                    </li>
-                    <li>
-                      <a class="dropdown-item" href="#">
-                        <i class="bx bx-user me-2"></i>
-                        <span class="align-middle">My Profile</span>
-                      </a>
-                    </li>
-                    <li>
-                      <a class="dropdown-item" href="#">
-                        <i class="bx bx-cog me-2"></i>
-                        <span class="align-middle">Settings</span>
-                      </a>
-                    </li>
-                    <li>
-                      <a class="dropdown-item" href="#">
-                        <span class="d-flex align-items-center align-middle">
-                          <i class="flex-shrink-0 bx bx-credit-card me-2"></i>
-                          <span class="flex-grow-1 align-middle">Billing</span>
-                          <span class="flex-shrink-0 badge badge-center rounded-pill bg-danger w-px-20 h-px-20">4</span>
-                        </span>
-                      </a>
-                    </li>
-                    <li>
-                      <div class="dropdown-divider"></div>
-                    </li>
-                    <li>
-                      <a class="dropdown-item" href="auth-login-basic.html">
-                        <i class="bx bx-power-off me-2"></i>
-                        <span class="align-middle">Log Out</span>
-                      </a>
-                    </li>
-                  </ul>
-                </li>
-                <!--/ User -->
-              </ul>
-            </div>
-          </nav>
+<!-- @extends('layout.partial.sidebar') -->
+@include('layout.partial.header')
 
           <!-- / Navbar -->
 
@@ -174,337 +13,174 @@
             <!-- Content -->
 
             <div class="container-xxl flex-grow-1 container-p-y">
-              <h4 class="fw-bold py-3 mb-4"><span class="text-muted fw-light"></span> Pengajuan Cuti/Izin</h4>
+              <h4 class="fw-bold py-3 mb-4"><span class="text-muted fw-light"></span>Absen</h4>
+
+              <!-- <div class="container"> -->
+                <!-- <div class="row"> -->
+                    <!-- <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12"> -->
+                        <div class="card">
+                            <div class="header">
+                                <div class="row">
+
+                                    <div class="col-6">
+                                        <div class="navbar-nav m-3">
+                                            <div class="nav-item d-flex align-items-center">
+                                            <!-- <i class="bx bx-search fs-4 lh-0"></i> -->
+                                            <input
+                                                type="text"
+                                                class="form-control border-1 shadow-none"
+                                                name="daterange"
+                                                placeholder="Daterange...."
+                                            />
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-6 mt-2">
+                                    <label for="">Status</label>
+                                        <div class="">
+                                            <label class="form-check-label chkbox_wrapper">
+                                                <input class="form-check-input filled-in prm_services i-prm-detail" name="filter-status" type="checkbox" id="status-need-approval" value="1">
+                                                <span class="form-check-sign">
+                                                    <span class="check"></span>
+                                                    <label for="status-active" style="cursor:pointer;">Need approval</label>
+                                                </span>
+                                            </label>
+                                            <label class="form-check-label chkbox_wrapper" style="padding-left: 10px">
+                                                <input class="form-check-input filled-in prm_services i-prm-detail" name="filter-status" type="checkbox" id="status-approved" value="2">
+                                                <span class="form-check-sign">
+                                                    <span class="check"></span>
+                                                    <label for="status-inactive" style="cursor:pointer;">Approved</label>
+                                                </span>
+                                            </label>
+                                            <label class="form-check-label chkbox_wrapper" style="padding-left: 10px">
+                                                <input class="form-check-input filled-in prm_services i-prm-detail" name="filter-status" type="checkbox" id="status-rejected" value="3">
+                                                <span class="form-check-sign">
+                                                    <span class="check"></span>
+                                                    <label for="status-inactive" style="cursor:pointer;">Rejected</label>
+                                                </span>
+                                            </label>
+                                        </div>
+                                    </div>
 
 
-              <div class="card">
-                <div class="header">
-                    <div class="row">
+                                    <div class="col-6 m-3">
 
-                        <div class="col-6">
-                            <div class="navbar-nav m-3">
-                                <div class="nav-item d-flex align-items-center">
-                                <!-- <i class="bx bx-search fs-4 lh-0"></i> -->
-                                <input
-                                    type="text"
-                                    class="form-control border-1 shadow-none"
-                                    placeholder="Search..."
-                                    aria-label="Search..."
-                                />
+                                            <button class="btn btn-primary" id="btnFilter">Search</button>
+                                            <!-- <button class="btn btn-primary" id="exportData">Export</button> -->
+
+                                        <!-- <div class="col-1"></div> -->
+
+
+
+                                    </div>
+
                                 </div>
                             </div>
                         </div>
-                        <div class="col-6 mt-2">
-                        <label for="">Status</label>
-                            <div class="">
-                                <label class="form-check-label chkbox_wrapper">
-                                    <input class="form-check-input filled-in prm_services i-prm-detail" name="filter-status" type="checkbox" id="status-need-approval" value="1">
-                                    <span class="form-check-sign">
-                                        <span class="check"></span>
-                                        <label for="status-active" style="cursor:pointer;">Need approval</label>
-                                    </span>
-                                </label>
-                                <label class="form-check-label chkbox_wrapper pl-4">
-                                    <input class="form-check-input filled-in prm_services i-prm-detail" name="filter-status" type="checkbox" id="status-approved" value="2">
-                                    <span class="form-check-sign">
-                                        <span class="check"></span>
-                                        <label for="status-inactive" style="cursor:pointer;">Approved</label>
-                                    </span>
-                                </label>
-                                <label class="form-check-label chkbox_wrapper pl-4">
-                                    <input class="form-check-input filled-in prm_services i-prm-detail" name="filter-status" type="checkbox" id="status-rejected" value="3">
-                                    <span class="form-check-sign">
-                                        <span class="check"></span>
-                                        <label for="status-inactive" style="cursor:pointer;">Rejected</label>
-                                    </span>
-                                </label>
-                            </div>
-                        </div>
-
-
-                        <div class="col-6 m-3">
-
-                                <button class="btn btn-primary" id="btnFilter">Search</button>
-                                <button class="btn btn-primary" id="btnExport">Export</button>
-
-                            <!-- <div class="col-1"></div> -->
-
-
-
-                        </div>
-
-                    </div>
-                </div>
-            </div>
+                    <!-- </div> -->
+                <!-- </div> -->
+              <!-- </div> -->
 
               <!-- <hr class="my-5" /> -->
 
               <!-- Hoverable Table rows -->
-              <div class="card mt-3">
-                <h5 class="card-header">Hoverable rows</h5>
-                <div class="table-responsive text-nowrap">
-                  <table class="table table-hover">
-                    <thead>
-                      <tr>
-                        <th>Project</th>
-                        <th>Client</th>
-                        <th>Users</th>
-                        <th>Status</th>
-                        <th>Actions</th>
-                      </tr>
-                    </thead>
-                    <tbody class="table-border-bottom-0">
-                      <tr>
-                        <td><i class="fab fa-angular fa-lg text-danger me-3"></i> <strong>Angular Project</strong></td>
-                        <td>Albert Cook</td>
-                        <td>
-                          <ul class="list-unstyled users-list m-0 avatar-group d-flex align-items-center">
-                            <li
-                              data-bs-toggle="tooltip"
-                              data-popup="tooltip-custom"
-                              data-bs-placement="top"
-                              class="avatar avatar-xs pull-up"
-                              title="Lilian Fuller"
-                            >
-                              <img src="../assets/img/avatars/5.png" alt="Avatar" class="rounded-circle" />
-                            </li>
-                            <li
-                              data-bs-toggle="tooltip"
-                              data-popup="tooltip-custom"
-                              data-bs-placement="top"
-                              class="avatar avatar-xs pull-up"
-                              title="Sophia Wilkerson"
-                            >
-                              <img src="../assets/img/avatars/6.png" alt="Avatar" class="rounded-circle" />
-                            </li>
-                            <li
-                              data-bs-toggle="tooltip"
-                              data-popup="tooltip-custom"
-                              data-bs-placement="top"
-                              class="avatar avatar-xs pull-up"
-                              title="Christina Parker"
-                            >
-                              <img src="../assets/img/avatars/7.png" alt="Avatar" class="rounded-circle" />
-                            </li>
-                          </ul>
-                        </td>
-                        <td><span class="badge bg-label-primary me-1">Active</span></td>
-                        <td>
-                          <div class="dropdown">
-                            <button type="button" class="btn p-0 dropdown-toggle hide-arrow" data-bs-toggle="dropdown">
-                              <i class="bx bx-dots-vertical-rounded"></i>
-                            </button>
-                            <div class="dropdown-menu">
-                              <a class="dropdown-item" href="javascript:void(0);"
-                                ><i class="bx bx-edit-alt me-1"></i> Edit</a
-                              >
-                              <a class="dropdown-item" href="javascript:void(0);"
-                                ><i class="bx bx-trash me-1"></i> Delete</a
-                              >
-                            </div>
-                          </div>
-                        </td>
-                      </tr>
-                      <tr>
-                        <td><i class="fab fa-react fa-lg text-info me-3"></i> <strong>React Project</strong></td>
-                        <td>Barry Hunter</td>
-                        <td>
-                          <ul class="list-unstyled users-list m-0 avatar-group d-flex align-items-center">
-                            <li
-                              data-bs-toggle="tooltip"
-                              data-popup="tooltip-custom"
-                              data-bs-placement="top"
-                              class="avatar avatar-xs pull-up"
-                              title="Lilian Fuller"
-                            >
-                              <img src="../assets/img/avatars/5.png" alt="Avatar" class="rounded-circle" />
-                            </li>
-                            <li
-                              data-bs-toggle="tooltip"
-                              data-popup="tooltip-custom"
-                              data-bs-placement="top"
-                              class="avatar avatar-xs pull-up"
-                              title="Sophia Wilkerson"
-                            >
-                              <img src="../assets/img/avatars/6.png" alt="Avatar" class="rounded-circle" />
-                            </li>
-                            <li
-                              data-bs-toggle="tooltip"
-                              data-popup="tooltip-custom"
-                              data-bs-placement="top"
-                              class="avatar avatar-xs pull-up"
-                              title="Christina Parker"
-                            >
-                              <img src="../assets/img/avatars/7.png" alt="Avatar" class="rounded-circle" />
-                            </li>
-                          </ul>
-                        </td>
-                        <td><span class="badge bg-label-success me-1">Completed</span></td>
-                        <td>
-                          <div class="dropdown">
-                            <button type="button" class="btn p-0 dropdown-toggle hide-arrow" data-bs-toggle="dropdown">
-                              <i class="bx bx-dots-vertical-rounded"></i>
-                            </button>
-                            <div class="dropdown-menu">
-                              <a class="dropdown-item" href="javascript:void(0);"
-                                ><i class="bx bx-edit-alt me-1"></i> Edit</a
-                              >
-                              <a class="dropdown-item" href="javascript:void(0);"
-                                ><i class="bx bx-trash me-1"></i> Delete</a
-                              >
-                            </div>
-                          </div>
-                        </td>
-                      </tr>
-                      <tr>
-                        <td><i class="fab fa-vuejs fa-lg text-success me-3"></i> <strong>VueJs Project</strong></td>
-                        <td>Trevor Baker</td>
-                        <td>
-                          <ul class="list-unstyled users-list m-0 avatar-group d-flex align-items-center">
-                            <li
-                              data-bs-toggle="tooltip"
-                              data-popup="tooltip-custom"
-                              data-bs-placement="top"
-                              class="avatar avatar-xs pull-up"
-                              title="Lilian Fuller"
-                            >
-                              <img src="../assets/img/avatars/5.png" alt="Avatar" class="rounded-circle" />
-                            </li>
-                            <li
-                              data-bs-toggle="tooltip"
-                              data-popup="tooltip-custom"
-                              data-bs-placement="top"
-                              class="avatar avatar-xs pull-up"
-                              title="Sophia Wilkerson"
-                            >
-                              <img src="../assets/img/avatars/6.png" alt="Avatar" class="rounded-circle" />
-                            </li>
-                            <li
-                              data-bs-toggle="tooltip"
-                              data-popup="tooltip-custom"
-                              data-bs-placement="top"
-                              class="avatar avatar-xs pull-up"
-                              title="Christina Parker"
-                            >
-                              <img src="../assets/img/avatars/7.png" alt="Avatar" class="rounded-circle" />
-                            </li>
-                          </ul>
-                        </td>
-                        <td><span class="badge bg-label-info me-1">Scheduled</span></td>
-                        <td>
-                          <div class="dropdown">
-                            <button type="button" class="btn p-0 dropdown-toggle hide-arrow" data-bs-toggle="dropdown">
-                              <i class="bx bx-dots-vertical-rounded"></i>
-                            </button>
-                            <div class="dropdown-menu">
-                              <a class="dropdown-item" href="javascript:void(0);"
-                                ><i class="bx bx-edit-alt me-1"></i> Edit</a
-                              >
-                              <a class="dropdown-item" href="javascript:void(0);"
-                                ><i class="bx bx-trash me-1"></i> Delete</a
-                              >
-                            </div>
-                          </div>
-                        </td>
-                      </tr>
-                      <tr>
-                        <td>
-                          <i class="fab fa-bootstrap fa-lg text-primary me-3"></i> <strong>Bootstrap Project</strong>
-                        </td>
-                        <td>Jerry Milton</td>
-                        <td>
-                          <ul class="list-unstyled users-list m-0 avatar-group d-flex align-items-center">
-                            <li
-                              data-bs-toggle="tooltip"
-                              data-popup="tooltip-custom"
-                              data-bs-placement="top"
-                              class="avatar avatar-xs pull-up"
-                              title="Lilian Fuller"
-                            >
-                              <img src="../assets/img/avatars/5.png" alt="Avatar" class="rounded-circle" />
-                            </li>
-                            <li
-                              data-bs-toggle="tooltip"
-                              data-popup="tooltip-custom"
-                              data-bs-placement="top"
-                              class="avatar avatar-xs pull-up"
-                              title="Sophia Wilkerson"
-                            >
-                              <img src="../assets/img/avatars/6.png" alt="Avatar" class="rounded-circle" />
-                            </li>
-                            <li
-                              data-bs-toggle="tooltip"
-                              data-popup="tooltip-custom"
-                              data-bs-placement="top"
-                              class="avatar avatar-xs pull-up"
-                              title="Christina Parker"
-                            >
-                              <img src="../assets/img/avatars/7.png" alt="Avatar" class="rounded-circle" />
-                            </li>
-                          </ul>
-                        </td>
-                        <td><span class="badge bg-label-warning me-1">Pending</span></td>
-                        <td>
-                          <div class="dropdown">
-                            <button type="button" class="btn p-0 dropdown-toggle hide-arrow" data-bs-toggle="dropdown">
-                              <i class="bx bx-dots-vertical-rounded"></i>
-                            </button>
-                            <div class="dropdown-menu">
-                              <a class="dropdown-item" href="javascript:void(0);"
-                                ><i class="bx bx-edit-alt me-1"></i> Edit</a
-                              >
-                              <a class="dropdown-item" href="javascript:void(0);"
-                                ><i class="bx bx-trash me-1"></i> Delete</a
-                              >
-                            </div>
-                          </div>
-                        </td>
-                      </tr>
-                    </tbody>
-                  </table>
+              <div class="card mt-3 ">
+                <h5 class="card-header">List</h5>
+                <div class="card-body">
+                  <div class="table-responsive">
+                    <table class="table table-striped" id="list-abs">
+                      <thead>
+                        <tr>
+                          <!-- <th>Date</th> -->
+                          <th>User</th>
+                          <th>FROM</th>
+                          <th>TO</th>
+                          <th>Alasan Cuti</th>
+                          <th>status</th>
+                          <th>reason</th>
+                          <th>Action</th>
+                        </tr>
+                      </thead>
+                      <tbody class="table-border-bottom-0">
+
+                      </tbody>
+                    </table>
+                  </div>
                 </div>
               </div>
-              <!--/ Hoverable Table rows -->
+
+
+              <div class="modal fade" id="modalConfirm" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                <div class="modal-dialog">
+                  <div class="modal-content">
+                    <div class="modal-header">
+                      <h5 class="modal-title" id="exampleModalLabel">Confirm action</h5>
+                      <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                    </div>
+                    <div class="modal-body">
+                      <input type="hidden" id="idx" value="">
+                      <input type="hidden" id="gdate" value="">
+                      <div id="reason">
+                        <label for="exampleFormControlTextarea1" class="form-label">Reason</label>
+                        <textarea class="form-control" id="reason-val" rows="3"></textarea>
+                      </div>
+                      <label class="form-check-label chkbox_wrapper mt-3">
+                            <input class="form-check-input filled-in prm_services i-prm-detail" name="" type="checkbox" id="confirm-action" value="1">
+                            <span class="form-check-sign">
+                                <span class="check"></span>
+                                <label for="confirm-action" id="ck-label" style="cursor:pointer;">Checklist jika anda ingin melanjutkan!</label>
+                            </span>
+                      </label>
+                    </div>
+                    <div class="modal-footer">
+                      <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                      <button type="button" class="btn btn-primary save-action">Save</button>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <div class="modal fade" id="modalExport" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                <div class="modal-dialog">
+                  <div class="modal-content">
+                    <div class="modal-header">
+                      <h5 class="modal-title" id="exampleModalLabel">Export Data</h5>
+                      <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                    </div>
+                    <div class="modal-body">
+                      <div class="row">
+                        <div class="col-6">
+                            <div class="mb-3">
+                              <label for="exp-start-date" class="form-label">Start Date</label>
+                              <input type="date" id="exp-start-date" class="form-control">
+                            </div>
+                        </div>
+                        <div class="col-6">
+                            <div class="mb-3">
+                              <label for="exp-end-date" class="form-label">End Date</label>
+                              <input type="date" id="exp-end-date" class="form-control">
+                            </div>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="modal-footer">
+                      <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                      <button type="button" class="btn btn-primary" id="btn-export">Export</button>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              @include('layout.toast')
 
 
             </div>
-            <!-- / Content -->
-
-            <!-- Footer -->
-            <footer class="content-footer footer bg-footer-theme">
-              <div class="container-xxl d-flex flex-wrap justify-content-between py-2 flex-md-row flex-column">
-                <div class="mb-2 mb-md-0">
-                  ©
-                  <script>
-                    document.write(new Date().getFullYear());
-                  </script>
-                  , made with ❤️ by
-                  <a href="https://themeselection.com" target="_blank" class="footer-link fw-bolder">ThemeSelection</a>
-                </div>
-                <div>
-                  <a href="https://themeselection.com/license/" class="footer-link me-4" target="_blank">License</a>
-                  <a href="https://themeselection.com/" target="_blank" class="footer-link me-4">More Themes</a>
-
-                  <a
-                    href="https://themeselection.com/demo/sneat-bootstrap-html-admin-template/documentation/"
-                    target="_blank"
-                    class="footer-link me-4"
-                    >Documentation</a
-                  >
-
-                  <a
-                    href="https://github.com/themeselection/sneat-html-admin-template-free/issues"
-                    target="_blank"
-                    class="footer-link me-4"
-                    >Support</a
-                  >
-                </div>
-              </div>
-            </footer>
-            <!-- / Footer -->
-
-            <div class="content-backdrop fade"></div>
           </div>
+          <!-- @include('layout.partial.footer') -->
           <!-- Content wrapper -->
-<!-- </div> -->
+
+        <!-- </div> -->
+        <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/daterangepicker/daterangepicker.min.js"></script>
+        <script src="https://cdn.datatables.net/1.13.1/js/jquery.dataTables.min.js"></script>
+        <script src="{{ asset('js/cuti/cuti_list.js') }}"></script>
 @endsection
