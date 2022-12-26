@@ -24,7 +24,7 @@ jQuery(function($){
     ABS.API = {
         List: function() {
             $.ajax({
-                url: APIURL + '/admin/presence_list',
+                url: APIURL + '/admin/cuti_list',
                 method: 'GET',
                 headers: {
                     'x-api-key': token_login
@@ -49,15 +49,15 @@ jQuery(function($){
                             }
                             $('#list-abs tbody').append(
                                 `<tr>
-                                    <td>${val.generated_date}</td>
                                     <td>${val.user_name}</td>
-                                    <td>${in_date}</td>
-                                    <td>${out_date}</td>
-                                    <td class="${State.colour[val.status_id]}">${val.status}</td>
-                                    <td>${val.reason ? val.reason : '-'}</td>
+                                    <td>${val.start_date}</td>
+                                    <td>${val.end_date}</td>
+                                    <td>${val.reason}</td>
+                                    <td class="${State.colour[val.status]}">${val.status_name}</td>
+                                    <td>${val.reason_reject ? val.reason_reject : '-'}</td>
                                     <td>
-                                        <a href="javascript:void(0);" class="mr-2 detail" id="approve" title="Approve" data-id="${val.id}" data-time="${val.generated_date}" style="color: #71dd37;"><i class="fa-solid fa-circle-check"></i></a>
-                                        <a href="javascript:void(0);" class="mr-2 detail" id="reject" title="Reject" data-id="${val.id}" data-time="${val.generated_date}" style="color: #ff3e1d;"><i class="fa-solid fa-circle-xmark"></i></a>
+                                        <a href="javascript:void(0);" class="mr-2 detail" id="approve" title="Approve" data-id="${val.id}" style="color: #71dd37;"><i class="fa-solid fa-circle-check"></i></a>
+                                        <a href="javascript:void(0);" class="mr-2 detail" id="reject" title="Reject" data-id="${val.id}" style="color: #ff3e1d;"><i class="fa-solid fa-circle-xmark"></i></a>
                                     </td>
                                 </tr>`
                             )
@@ -72,16 +72,15 @@ jQuery(function($){
                 }
             })
         },
-        Approve: function(idx, gdate) {
+        Approve: function(idx) {
             $.ajax({
-                url: APIURL + '/admin/presence/approve',
+                url: APIURL + '/admin/cuti/approve',
                 method: 'POST',
                 headers: {
                     'x-api-key': token_login
                 },
                 data: {
-                    presence_id: idx,
-                    generated_date: gdate
+                    cuti_id: idx,
                 },
                 success: function(resp) {
                     $('#modalConfirm').modal('hide')
@@ -109,14 +108,13 @@ jQuery(function($){
         },
         Reject: function(data) {
             $.ajax({
-                url: APIURL + '/admin/presence/reject',
+                url: APIURL + '/admin/cuti/reject',
                 method: 'POST',
                 headers: {
                     'x-api-key': token_login
                 },
                 data: {
-                    presence_id: data.presence_id,
-                    generated_date: data.generated_date,
+                    cuti_id: data.cuti_id,
                     reason: data.reason
                 },
                 success: function(resp) {
@@ -143,54 +141,12 @@ jQuery(function($){
                 }
             })
         },
-        Rekap: function(data) {
-            $.ajax({
-                url: APIURL + '/admin/abs/recap',
-                method: 'GET',
-                headers: {
-                    'x-api-key': token_login
-                },
-                data: {
-                    start_date: data.start_date,
-                    end_date: data. end_date
-                },
-                success: function(resp) {
-                    if (resp.meta.code == 200) {
-                        let years = moment(data.start_date).format('YYYY')
-                        let month = moment(data.start_date).format('MM')
-                        let header = ABS.FUNCTION.getDaysArray(years, month)
-                        // return console.log(header);/\
-                        let xlsx_header = ['User', 'Total Point'].concat(header)
-
-                         // export
-                        var ws = XLSX.utils.json_to_sheet(
-                            resp.data
-                        , {
-                            header: xlsx_header
-                        });
-                        var wb = XLSX.utils.book_new();
-                        XLSX.utils.book_append_sheet(wb, ws, 'Rekap');
-                        XLSX.writeFile(wb, 'Rekap Absen '+month+ ' ' + years +'.xlsx');
-
-                    } else {
-                        $('.toast-header').addClass('bg-warning')
-                        $('#toast-title-message').html('FAILED')
-                        $('.toast-body').html('Data not found!')
-                        $('#liveToast').toast('show')
-                    }
-                },
-                error: function(e) {
-                    console.log('error: ', e);
-                }
-            })
-        }
     }
 
     ABS.EVENT = {
         active: function() {
             this.approve()
             this.reject()
-            this.export()
 
             $('input[name="daterange"]').daterangepicker({
                 opens: 'right',
@@ -228,7 +184,6 @@ jQuery(function($){
             $('#list-abs tbody').on('click', '#approve', function() {
                 // $('#liveToast').toast('show')
                 $('#idx').val($(this).data('id'))
-                $('#gdate').val($(this).data('time'))
                 $('#reason').css('display', 'none')
                 $('.save-action').attr('id', 'approveData')
                 $('#modalConfirm').modal('show')
@@ -237,7 +192,7 @@ jQuery(function($){
             $(document).on('click', '#approveData', function() {
                 if ($('#confirm-action').is(':checked')) {
                     $('#ck-label').css('color', '')
-                    ABS.API.Approve($('#idx').val(), $('#gdate').val())
+                    ABS.API.Approve($('#idx').val())
                 } else {
                     $('#ck-label').css('color', 'red')
                 }
@@ -247,7 +202,7 @@ jQuery(function($){
         reject: function() {
             $('#list-abs tbody').on('click', '#reject', function() {
                 $('#idx').val($(this).data('id'))
-                $('#gdate').val($(this).data('time'))
+                // $('#gdate').val($(this).data('time'))
                 $('#reason').css('display', '')
                 $('.save-action').attr('id', 'rejectData')
                 $('#modalConfirm').modal('show')
@@ -258,8 +213,7 @@ jQuery(function($){
                     $('#ck-label').css('color', '')
 
                     let params = {
-                        presence_id: $('#idx').val(),
-                        generated_date: $('#gdate').val(),
+                        cuti_id: $('#idx').val(),
                         reason: $('#reason-val').val()
                     }
                     // return console.log(params);
@@ -269,42 +223,6 @@ jQuery(function($){
                 }
             })
         },
-        export: function() {
-            $('#exportData').on('click', function() {
-                $('#modalExport').modal('show')
-            })
-
-            $('#btn-export').on('click', function() {
-                let params = {
-                    start_date: $('#exp-start-date').val(),
-                    end_date: $('#exp-end-date').val()
-                }
-                // console.log(moment(params.start_date).format('YYYY'));
-                ABS.API.Rekap(params)
-            })
-        }
-    }
-
-    ABS.FUNCTION = {
-        getDaysArray: function(year, month) {
-            let monthIndex = month - 1; // 0..11 instead of 1..12
-            let names = [ 'sun', 'mon', 'tue', 'wed', 'thu', 'fri', 'sat' ];
-            let date = new Date(year, monthIndex, 1);
-            // console.log(moment(date).format('DD'));
-            let result = [];
-            while (date.getMonth() == monthIndex) {
-                // names[date.getDay()] => get days name
-                let get_month = date.getMonth() // get month
-                    get_month = parseInt(get_month) + parseInt(1) // get years
-                let get_year = date.getFullYear().toString()
-
-                // result.push(get_month + '/' + date.getDate()  + '/' + get_year);
-                result.push(moment(date).format('DD') + '/' + get_month  + '/' + get_year);
-                date.setDate(date.getDate() + 1);
-            }
-
-            return result;
-        }
     }
 
     ABS.actived()

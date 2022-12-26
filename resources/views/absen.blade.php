@@ -2,8 +2,8 @@
 @section('body_content')
     <!-- Navbar -->
 <!-- Layout container -->
-<div class="layout-page">
-@extends('layout.partial.sidebar')
+<!-- <div class="layout-page"> -->
+<!-- @extends('layout.partial.sidebar') -->
 @include('layout.partial.header')
 
           <!-- / Navbar -->
@@ -101,13 +101,13 @@
                         </tr>
                       </thead>
                       <tbody class="table-border-bottom-0">
-                        
+
                       </tbody>
                     </table>
                   </div>
                 </div>
               </div>
-              
+
 
               <div class="modal fade" id="modalConfirm" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
                 <div class="modal-dialog">
@@ -171,14 +171,14 @@
               </div>
 
               @include('layout.toast')
-              
-              
+
+
             </div>
           </div>
           <!-- @include('layout.partial.footer') -->
           <!-- Content wrapper -->
-          
-        </div>
+
+        <!-- </div> -->
         <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/daterangepicker/daterangepicker.min.js"></script>
         <script src="https://cdn.datatables.net/1.13.1/js/jquery.dataTables.min.js"></script>
         <script src="{{ asset('js/absen/abs_list.js') }}"></script>

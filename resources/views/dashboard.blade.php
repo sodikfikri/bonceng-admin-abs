@@ -3,7 +3,7 @@
 <!-- Content wrapper -->
 <!-- Navbar -->
 <!-- Layout container -->
-<div class="layout-page">
+<!-- <div class="layout-page"> -->
         <nav
             class="layout-navbar container-xxl navbar navbar-expand-xl navbar-detached align-items-center bg-navbar-theme"
             id="layout-navbar"
@@ -117,7 +117,7 @@
                     <div class="d-flex align-items-end row">
                       <div class="col-sm-7">
                         <div class="card-body">
-                          <h5 class="card-title text-primary">Congratulations John! 🎉</h5>
+                          <h5 class="card-title text-primary">Congratulations Fajar! 🎉</h5>
                           <p class="mb-4">
                             You have done <span class="fw-bold">72%</span> more sales today. Check your new badge in
                             your profile.
@@ -681,7 +681,7 @@
             <div class="content-backdrop fade"></div>
           </div>
     <!-- Content wrapper -->
-</div>
+<!-- </div> -->
     <!-- <script>
         console.log(token_login)
     </script> -->

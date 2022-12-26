@@ -100,13 +100,13 @@
     <div class="layout-wrapper layout-content-navbar">
       <div class="layout-container">
 
-      <!-- @include('layout.partial.sidebar') -->
+      @include('layout.partial.sidebar')
 
         <!-- Layout container -->
-        <!-- <div class="layout-page"> -->
+        <div class="layout-page">
 
           @yield('body_content')
-        <!-- </div> -->
+        </div>
         <!-- / Layout page -->
       </div>
 
