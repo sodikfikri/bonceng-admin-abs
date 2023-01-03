@@ -141,12 +141,56 @@ jQuery(function($){
                 }
             })
         },
+        Recap: function(data) {
+            $.ajax({
+                url: APIURL + '/admin/cuti/recap',
+                method: 'GET',
+                headers: {
+                    'x-api-key': token_login
+                },
+                data: {
+                    start_date: '2022-12-01',
+                    end_date: '2022-12-31',
+                },
+                success: function(resp) {
+                    if (resp.meta.code == 200) {
+                        if (resp.data.length != 0) {
+                            let years = '2022-12-01';
+                            let month = '2022-12-31';
+
+                            let ws = XLSX.utils.json_to_sheet(
+                                resp.data
+                            , {
+                                header: ['User Name', 'Start Date', 'End Date', 'Reason', 'Reason Refusing', 'Status', 'Approve Date', 'Reject Date']
+                            });
+                            let wb = XLSX.utils.book_new();
+                            XLSX.utils.book_append_sheet(wb, ws, 'Rekap');
+                            XLSX.writeFile(wb, 'Rekap Cuti '+month+ ' ' + years +'.xlsx');
+                        } else {
+                            $('.toast-header').addClass('bg-warning')
+                            $('#toast-title-message').html('FAILED')
+                            $('.toast-body').html('Data not found!')
+                            $('#liveToast').toast('show')
+                        }
+                    } else {
+                        $('.toast-header').addClass('bg-warning')
+                        $('#toast-title-message').html('FAILED')
+                        $('.toast-body').html('Fail to get data!')
+                        $('#liveToast').toast('show')
+                    }
+                },
+                error: function(e) {
+                    console.log('error: ', e);
+                }
+            })
+        }
     }
 
     ABS.EVENT = {
         active: function() {
             this.approve()
             this.reject()
+            this.recap()
 
             $('input[name="daterange"]').daterangepicker({
                 opens: 'right',
@@ -223,6 +267,19 @@ jQuery(function($){
                 }
             })
         },
+        recap: function() {
+            $('#btneExport').on('click', function() {
+                $('#modalExport').modal('show')
+            })
+
+            $('#btn-export').on('click', function() {
+                let params = {
+                    start_date: $('#exp-start-date').val(),
+                    end_date: $('#exp-end-date').val()
+                }
+                ABS.API.Recap(params)
+            })
+        }
     }
 
     ABS.actived()
