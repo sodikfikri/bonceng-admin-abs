@@ -66,6 +66,7 @@
                                     <div class="col-6 m-3">
 
                                             <button class="btn btn-primary" id="btnFilter">Search</button>
+                                            <button class="btn btn-primary" id="btneExport">Export</button>
                                             <!-- <button class="btn btn-primary" id="exportData">Export</button> -->
 
                                         <!-- <div class="col-1"></div> -->
