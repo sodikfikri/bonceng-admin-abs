@@ -296,6 +296,7 @@ jQuery(function($){
                 // names[date.getDay()] => get days name
                 let get_month = date.getMonth() // get month
                     get_month = parseInt(get_month) + parseInt(1) // get years
+                    get_month = get_month < 10 ?  '0' + get_month : get_month
                 let get_year = date.getFullYear().toString()
 
                 // result.push(get_month + '/' + date.getDate()  + '/' + get_year);

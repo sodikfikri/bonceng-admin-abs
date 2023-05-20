@@ -178,7 +178,7 @@
 
               <!-- Hoverable Table rows -->
               <div class="card">
-              <div class="card-header">
+                <div class="card-header">
                     <div class="row">
                     <div class="col-9"></div>
                     <div class="col-3">
@@ -186,22 +186,24 @@
                     </div>
                     </div>
                 </div>
-                <div class="table-responsive text-nowrap">
-                  <table class="table table-hover" id="list-karyawan">
-                    <thead>
-                      <tr>
-                        <th>Nama</th>
-                        <!-- <th>Email</th> -->
-                        <th>Alamat</th>
-                        <th>Divisi</th>
-                        <th>Status</th>
-                        <th>Action</th>
-                      </tr>
-                    </thead>
-                    <tbody class="table-border-bottom-0">
-
-                    </tbody>
-                  </table>
+                <div class="card-header">
+                  <div class="table-responsive text-nowrap">
+                    <table class="table table-hover" id="list-karyawan">
+                      <thead>
+                        <tr>
+                          <th>Nama</th>
+                          <!-- <th>Email</th> -->
+                          <th>Alamat</th>
+                          <th>Divisi</th>
+                          <th>Status</th>
+                          <th>Action</th>
+                        </tr>
+                      </thead>
+                      <tbody class="table-border-bottom-0">
+  
+                      </tbody>
+                    </table>
+                  </div>
                 </div>
               </div>
               <!--/ Hoverable Table rows -->
@@ -345,5 +347,6 @@
           </div>
           <!-- Content wrapper -->
           <script src="{{ asset('js/karyawan/karyawan_list.js') }}"></script>
+          <script src="https://cdn.datatables.net/1.13.1/js/jquery.dataTables.min.js"></script>
 <!-- </div> -->
 @endsection
