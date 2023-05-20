@@ -19,6 +19,8 @@ jQuery(function($){
 
     KAR.API = {
         List: function(){
+            $('#list-karyawan').dataTable().fnDestroy()
+            $('#list-karyawan').DataTable()
             $.ajax({
                 url: APIURL + '/admin/user_list',
                 headers: {
@@ -55,7 +57,10 @@ jQuery(function($){
 
                         })
                     })
-                }
+                },
+                // complete:  function() {
+                //     $('#list-karyawan tbody').DataTable()
+                // }
             })
         },
         AddKar: function(name,email,pass,repass,phone,address, divisi){
@@ -87,7 +92,7 @@ jQuery(function($){
                         console.log('tes: ', resp.meta.status);
                         $('.toast-header').addClass('bg-warning')
                         $('#toast-title-message').html('Failed')
-                        $('.toast-body').html('Fail to add data')
+                        $('.toast-body').html(resp.meta.message)
                         $('#liveToast').toast('show')
                     }
                     KAR.API.List()

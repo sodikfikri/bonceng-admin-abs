@@ -16,10 +16,12 @@ jQuery(function($){
                 method: 'POST',
                 data: data,
                 success: function(resp) {
-                    console.log(resp);
+                    // return console.log(resp);
                     if (resp.meta.code == '200') {
-                        window.location.href = State.WEBURL + '/dashboard'
-                        localStorage.setItem("token_login", resp.token);
+                        setTimeout(() => {
+                            window.location.href = State.WEBURL + '/dashboard'
+                            localStorage.setItem("token_login", resp.token);
+                        }, 300);
                     } else {
                         alert(resp.meta.message)
                     }

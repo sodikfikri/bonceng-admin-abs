@@ -15,35 +15,35 @@
 
           <ul class="menu-inner py-1">
             <!-- Dashboard -->
-            <li class="menu-item active">
+            {{-- <li class="menu-item {{ request()->segment(1) == 'dashboard' ? 'active' : '' }}">
               <a href="/dashboard" class="menu-link">
                 <i class="menu-icon tf-icons bx bx-home-circle"></i>
                 <div data-i18n="Analytics">Dashboard</div>
               </a>
-            </li>
+            </li> --}}
 
-            <li class="menu-item">
+            <li class="menu-item {{ request()->segment(1) == 'absen' ? 'active' : '' }}">
               <a href="/absen" class="menu-link">
                 <i class="menu-icon tf-icons bx bx-layout"></i>
                 <div data-i18n="Analytics">Absen</div>
               </a>
             </li>
 
-            <li class="menu-item">
+            <li class="menu-item {{ request()->segment(1) == 'cuti' ? 'active' : '' }}">
               <a href="/cuti" class="menu-link">
                 <i class="menu-icon tf-icons bx bx-dock-top"></i>
                 <div data-i18n="Analytics">Cuti</div>
               </a>
             </li>
 
-            <li class="menu-item">
+            <li class="menu-item {{ request()->segment(1) == 'divisi' ? 'active' : '' }}">
               <a href="/divisi" class="menu-link">
                 <i class="menu-icon tf-icons bx bx-dock-top"></i>
                 <div data-i18n="Analytics">Divisi</div>
               </a>
             </li>
 
-            <li class="menu-item">
+            <li class="menu-item {{ request()->segment(1) == 'karyawan' ? 'active' : '' }}">
               <a href="/karyawan" class="menu-link">
                 <i class="menu-icon tf-icons bx bx-dock-top"></i>
                 <div data-i18n="Analytics">Karyawan</div>
