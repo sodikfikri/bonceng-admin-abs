@@ -20,6 +20,8 @@ jQuery(function($){
 
     DIV.API = {
         List: function(){
+            $('#list-div').dataTable().fnDestroy()
+            $('#list-div').DataTable()
             $.ajax({
                 url: APIURL + '/admin/list_divisi',
                 headers: {
@@ -117,19 +119,14 @@ jQuery(function($){
                 }
             })
         },
-        Editdiv: function(id, name){
-            console.log(id)
-            console.log(name)
+        Editdiv: function(params){
             $.ajax({
                 url: APIURL + '/admin/update_divisi',
                 method: 'PUT',
                 headers: {
                     'x-api-key': token_login
                 },
-                data: {
-                    id: id,
-                    name: name
-                },
+                data: params,
                 success: function(resp){
                     $('#modalDivisi').modal('hide')
                     if(resp.meta.code == 200){
@@ -147,6 +144,25 @@ jQuery(function($){
                 },
                 error: function(e) {
                     console.log('error: ', e);
+                }
+            })
+        },
+        Detail: function(id) {
+            $.ajax({
+                url: APIURL + '/admin/detail_divisi',
+                method: 'GET',
+                headers: {
+                    'x-api-key': token_login
+                },
+                data: {
+                    id: id
+                },
+                success: function(resp) {
+                    if (resp.meta.code == 200) {
+                        $('#idx').val(resp.data.id)
+                        $('#nama-divisi').val(resp.data.name)
+                        $('#statusSelect').val(resp.data.is_active).change()
+                    }
                 }
             })
         }
@@ -189,27 +205,20 @@ jQuery(function($){
             })
         },
         editdiv: function() {
-            let idx = ''
-            let name = ''
             $('#list-div tbody').on('click', '#editDiv', function() {
-                idx = $(this).data('id')
-                name = $(this).data('name')
-                $('#nama-divisi').val(name)
+                DIV.API.Detail($(this).data('id'))
                 $('.save-action-edit').attr('id', 'editData')
                 $('#modalDivisi').modal('show')
             })
 
             $(document).on('click', '#editData', function() {
-                // if ($('#confirm-action').is(':checked')) {
-                //     $('#ck-label').css('color', '')
 
-                    console.log(idx)
-                    console.log(name)
-                    // return console.log(params);
-                    DIV.API.Editdiv(idx,$('#nama-divisi').val())
-                // } else {
-                //     $('#ck-label').css('color', 'red')
-                // }
+                let params = {
+                    id: $('#idx').val(),
+                    name: $('#nama-divisi').val(),
+                    status: $('#statusSelect').val()
+                }
+                DIV.API.Editdiv(params)
             })
         },
     }

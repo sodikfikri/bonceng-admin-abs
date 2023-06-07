@@ -190,21 +190,23 @@
                     </div>
                 </div>
                 <!-- <h5 class="card-header">Hoverable rows</h5> -->
-                <div class="table-responsive text-nowrap">
-                  <table class="table table-hover" id="list-div">
-                    <thead>
-                      <tr>
-                        <th>Divisi</th>
-                        <th>Created At</th>
-                        <th>Update at</th>
-                        <th>Status</th>
-                        <th>Action</th>
-                      </tr>
-                    </thead>
-                    <tbody class="table-border-bottom-0">
-
-                    </tbody>
-                  </table>
+                <div class="card-body">
+                  <div class="table-responsive text-nowrap">
+                    <table class="table table-hover" id="list-div">
+                      <thead>
+                        <tr>
+                          <th>Divisi</th>
+                          <th>Created At</th>
+                          <th>Update at</th>
+                          <th>Status</th>
+                          <th>Action</th>
+                        </tr>
+                      </thead>
+                      <tbody class="table-border-bottom-0">
+  
+                      </tbody>
+                    </table>
+                  </div>
                 </div>
               </div>
               <!--/ Hoverable Table rows -->
@@ -319,5 +321,7 @@
           </div>
           <!-- Content wrapper -->
 <!-- </div> -->
+        <script src="https://cdn.datatables.net/1.13.1/js/jquery.dataTables.min.js"></script>
+
         <script src="{{ asset('js/divisi/div_list.js') }}"></script>
 @endsection
