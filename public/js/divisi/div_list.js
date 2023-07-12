@@ -54,6 +54,9 @@ jQuery(function($){
                             )
                         })
                     }
+                },
+                complete: function() {
+                    $('#list-div').DataTable()
                 }
             })
         },

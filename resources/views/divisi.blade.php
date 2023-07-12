@@ -184,7 +184,7 @@
                 <div class="card-header">
                     <div class="row">
                     <div class="col-9"></div>
-                    <div class="col-3">
+                    <div class="col-3" style="text-align: right">
                         <button class="btn btn-primary" type="button" id="btnAddDivisi">Tambah divisi</button>
                     </div>
                     </div>
@@ -203,7 +203,7 @@
                         </tr>
                       </thead>
                       <tbody class="table-border-bottom-0">
-  
+
                       </tbody>
                     </table>
                   </div>
@@ -215,38 +215,6 @@
             </div>
             <!-- / Content -->
 
-            <!-- Footer -->
-            <footer class="content-footer footer bg-footer-theme">
-              <div class="container-xxl d-flex flex-wrap justify-content-between py-2 flex-md-row flex-column">
-                <div class="mb-2 mb-md-0">
-                  ©
-                  <script>
-                    document.write(new Date().getFullYear());
-                  </script>
-                  , made with ❤️ by
-                  <a href="https://themeselection.com" target="_blank" class="footer-link fw-bolder">ThemeSelection</a>
-                </div>
-                <div>
-                  <a href="https://themeselection.com/license/" class="footer-link me-4" target="_blank">License</a>
-                  <a href="https://themeselection.com/" target="_blank" class="footer-link me-4">More Themes</a>
-
-                  <a
-                    href="https://themeselection.com/demo/sneat-bootstrap-html-admin-template/documentation/"
-                    target="_blank"
-                    class="footer-link me-4"
-                    >Documentation</a
-                  >
-
-                  <a
-                    href="https://github.com/themeselection/sneat-html-admin-template-free/issues"
-                    target="_blank"
-                    class="footer-link me-4"
-                    >Support</a
-                  >
-                </div>
-              </div>
-            </footer>
-            <!-- / Footer -->
 
             <!-- The Modal -->
             <div class="modal" id="modalDivisi">
@@ -321,7 +289,5 @@
           </div>
           <!-- Content wrapper -->
 <!-- </div> -->
-        <script src="https://cdn.datatables.net/1.13.1/js/jquery.dataTables.min.js"></script>
-
+<script src="https://cdn.datatables.net/1.13.1/js/jquery.dataTables.min.js"></script>
         <script src="{{ asset('js/divisi/div_list.js') }}"></script>
-@endsection
