@@ -35,8 +35,9 @@ jQuery(function($){
                     status: State.filter.status
                 },
                 success: function(resp) {
+                    $('#list-abs tbody').empty()
+                    
                     if (resp.meta.code == 200) {
-                        $('#list-abs tbody').empty()
                         $.each(resp.data, function(key, val) {
                             let in_date = `-`
                             let out_date = ``
@@ -222,7 +223,7 @@ jQuery(function($){
                 }).get();
 
                 State.filter.status = status.length == 0 ? 0 : status
-
+                // return console.log(State.filter);
                 ABS.API.List()
             })
         },
