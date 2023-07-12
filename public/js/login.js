@@ -19,7 +19,7 @@ jQuery(function($){
                     // return console.log(resp);
                     if (resp.meta.code == '200') {
                         setTimeout(() => {
-                            window.location.href = State.WEBURL + '/dashboard'
+                            window.location.href = State.WEBURL + '/absen'
                             localStorage.setItem("token_login", resp.token);
                         }, 300);
                     } else {

@@ -291,3 +291,4 @@
 <!-- </div> -->
 <script src="https://cdn.datatables.net/1.13.1/js/jquery.dataTables.min.js"></script>
         <script src="{{ asset('js/divisi/div_list.js') }}"></script>
+@endsection
