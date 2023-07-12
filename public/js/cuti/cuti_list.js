@@ -35,8 +35,9 @@ jQuery(function($){
                     status: State.filter.status
                 },
                 success: function(resp) {
+                    $('#list-abs tbody').empty()
                     if (resp.meta.code == 200) {
-                        $('#list-abs tbody').empty()
+
                         $.each(resp.data, function(key, val) {
                             let in_date = `-`
                             let out_date = ``
@@ -149,14 +150,14 @@ jQuery(function($){
                     'x-api-key': token_login
                 },
                 data: {
-                    start_date: '2022-12-01',
-                    end_date: '2022-12-31',
+                    start_date: data.start_date,
+                    end_date: data.end_date
                 },
                 success: function(resp) {
                     if (resp.meta.code == 200) {
                         if (resp.data.length != 0) {
-                            let years = '2022-12-01';
-                            let month = '2022-12-31';
+                            let years =  moment(data.start_date).format('YYYY')
+                            let month = moment(data.start_date).format('MM')
 
                             let ws = XLSX.utils.json_to_sheet(
                                 resp.data
@@ -220,7 +221,7 @@ jQuery(function($){
                 }).get();
 
                 State.filter.status = status.length == 0 ? 0 : status
-
+                console.log(State.filter.status);
                 ABS.API.List()
             })
         },

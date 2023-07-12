@@ -36,7 +36,7 @@ jQuery(function($){
                 },
                 success: function(resp) {
                     $('#list-abs tbody').empty()
-                    
+
                     if (resp.meta.code == 200) {
                         $.each(resp.data, function(key, val) {
                             let in_date = `-`
@@ -153,7 +153,7 @@ jQuery(function($){
                 },
                 data: {
                     start_date: data.start_date,
-                    end_date: data. end_date
+                    end_date: data.end_date
                 },
                 success: function(resp) {
                     if (resp.meta.code == 200) {
@@ -212,8 +212,6 @@ jQuery(function($){
             });
 
             $(document).on('click', '#btnFilter', function(){
-                console.log('tes filter absen ');
-                console.log('input[name="filter-status"]');
                 let status = $('input[name="filter-status"]').map(function(){
                     let val = null
                     if ($(this).is(":checked")) {
