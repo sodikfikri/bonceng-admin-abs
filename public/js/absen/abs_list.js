@@ -211,6 +211,8 @@ jQuery(function($){
             });
 
             $(document).on('click', '#btnFilter', function(){
+                console.log('tes filter absen ');
+                console.log('input[name="filter-status"]');
                 let status = $('input[name="filter-status"]').map(function(){
                     let val = null
                     if ($(this).is(":checked")) {
