@@ -96,7 +96,7 @@ jQuery(function($){
                     } else {
                         $('.toast-header').addClass('bg-warning')
                         $('#toast-title-message').html('Failed')
-                        $('.toast-body').html('Fail to approve data')
+                        $('.toast-body').html(resp.meta.message)
                         $('#liveToast').toast('show')
                     }
 
@@ -132,7 +132,7 @@ jQuery(function($){
                     } else {
                         $('.toast-header').addClass('bg-warning')
                         $('#toast-title-message').html('Failed')
-                        $('.toast-body').html('Fail to reject data')
+                        $('.toast-body').html(resp.meta.message)
                         $('#liveToast').toast('show')
                     }
 
@@ -172,11 +172,12 @@ jQuery(function($){
                         var wb = XLSX.utils.book_new();
                         XLSX.utils.book_append_sheet(wb, ws, 'Rekap');
                         XLSX.writeFile(wb, 'Rekap Absen '+month+ ' ' + years +'.xlsx');
-
+                        $('#modalExport').modal('hide')
                     } else {
+                        $('#modalExport').modal('hide')
                         $('.toast-header').addClass('bg-warning')
                         $('#toast-title-message').html('FAILED')
-                        $('.toast-body').html('Data not found!')
+                        $('.toast-body').html(resp.meta.message)
                         $('#liveToast').toast('show')
                     }
                 },

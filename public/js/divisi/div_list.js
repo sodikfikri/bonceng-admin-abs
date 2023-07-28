@@ -81,7 +81,7 @@ jQuery(function($){
                     } else {
                         $('.toast-header').addClass('bg-warning')
                         $('#toast-title-message').html('Failed')
-                        $('.toast-body').html('Fail to add data')
+                        $('.toast-body').html(resp.meta.message)
                         $('#liveToast').toast('show')
                     }
                     DIV.API.List()
@@ -112,7 +112,7 @@ jQuery(function($){
                     } else {
                         $('.toast-header').addClass('bg-warning')
                         $('#toast-title-message').html('Failed')
-                        $('.toast-body').html('Fail to delete data')
+                        $('.toast-body').html(resp.meta.message)
                         $('#liveToast').toast('show')
                     }
                     DIV.API.List()
@@ -140,7 +140,7 @@ jQuery(function($){
                     } else {
                         $('.toast-header').addClass('bg-warning')
                         $('#toast-title-message').html('Failed')
-                        $('.toast-body').html('Fail to edit data')
+                        $('.toast-body').html(resp.meta.message)
                         $('#liveToast').toast('show')
                     }
                     DIV.API.List()

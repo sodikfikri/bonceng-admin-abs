@@ -200,7 +200,7 @@
                         </tr>
                       </thead>
                       <tbody class="table-border-bottom-0">
-  
+
                       </tbody>
                     </table>
                   </div>
@@ -220,7 +220,7 @@
 
                     <!-- Modal Header -->
                     <div class="modal-header">
-                        <h4 class="modal-title">Tambah divisi</h4>
+                        <h4 class="modal-title">Tambah Karyawan</h4>
                         <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
                     </div>
 
